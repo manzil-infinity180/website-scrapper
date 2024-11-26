@@ -11,3 +11,9 @@
 
 > Read More
 > https://www.webshare.io/academy-article/puppeteer-extra#conclusion
+
+> Scrape Any Twitter Post
+> [Click Here](https://github.com/manzil-infinity180/website-scrapper/tree/main/src/twitter)
+
+> See Latest YC job
+> [Click Here](https://github.com/manzil-infinity180/website-scrapper/tree/main/src/ycombinator)

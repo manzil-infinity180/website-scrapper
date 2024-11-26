@@ -19,9 +19,11 @@
   "devDependencies": {
     "@types/cheerio": "^0.22.35",
     "@types/json2md": "^1.5.4",
+    "@types/node": "^22.10.0",
     "@types/puppeteer": "^5.4.7",
     "@types/user-agents": "^1.0.4",
-    "typescript": "^5.6.3"
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2"
   },
   "dependencies": {
     "@types/random-useragent": "^0.3.3",
