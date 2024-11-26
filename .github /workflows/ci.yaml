@@ -1,21 +1,18 @@
 name: Daily Job Scraper
-
 on:
   push:
     branches:
       - main
-      
   pull_request:
     branches:
       - main
-      
   schedule:
-    - cron: '0 6 * * *' 
+    - cron: '0 6 * * *'
   workflow_dispatch:
 
 jobs:
   scrape-and-update:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     permissions: write-all
 
     steps:
@@ -25,7 +22,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: "20.x"
 
       - name: Install dependencies
         run: npm install
