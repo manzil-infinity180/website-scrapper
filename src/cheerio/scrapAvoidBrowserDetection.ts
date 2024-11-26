@@ -17,7 +17,7 @@ puppeteer.use(StealthPlugins());
  * It uses pupeteer extra and plugins which help you to get rid of browser detection and additionally add rate limit 
  * also to it
  */
-async function scrap(url:string, headless: boolean){
+async function scrap(url: string, headless: boolean) {
     console.log(puppeteer);
     const browser = await puppeteer.launch({
         headless: headless,
@@ -26,12 +26,22 @@ async function scrap(url:string, headless: boolean){
     // twitter
     await page.goto(url, { waitUntil: 'networkidle2' });
     const content = await page.content();
-    console.log(content);
+    // console.log(content);
     const $ = cheerio.load(content);
     const tweetText = $('div[data-testid="tweetText"]').text();
+    const tweetPhotos: Array<string> = [];
+    $('div[data-testid="tweetPhoto"] > img').each((_, element) => {
+        const photoUrl = $(element).attr('src');
+        if (photoUrl) {
+            tweetPhotos.push(photoUrl);
+        }
+    });
     console.log('Tweet:', tweetText);
+    console.log("PHOTO", tweetPhotos);
     await browser.close();
+    // data-testid="tweetPhoto"
 }
+scrap('https://x.com/juberti/status/1861123495897465273', true);
 /**
  * 
  * @param url 
@@ -40,7 +50,7 @@ async function scrap(url:string, headless: boolean){
  * random-agent - lightwight
  */
 
-async function scrapWithDifferentUserAgent(url: string, headless: boolean){
+async function scrapWithDifferentUserAgent(url: string, headless: boolean) {
     const browser = await puppeteer.launch({
         headless: headless,
     });
@@ -55,6 +65,7 @@ async function scrapWithDifferentUserAgent(url: string, headless: boolean){
     console.log(bodyText1);
     await browser.close();
 }
+// We will use this 
 /**
  * 
  * @param url 
@@ -65,7 +76,7 @@ async function scrapWithDifferentUserAgent(url: string, headless: boolean){
 puppeteer.use(RandomUserAgent({
     customFn: () => new UserAgent().random().toString(),
 }))
-async function scrapUsingUserAgentPlugins(url: string, headless: boolean){
+async function scrapUsingUserAgentPlugins(url: string, headless: boolean) {
     const browser = await puppeteer.launch({
         headless: headless,
     });
@@ -82,7 +93,8 @@ async function scrapUsingUserAgentPlugins(url: string, headless: boolean){
 }
 // scrap('https://x.com/kuberdenis/status/1854970093278462447', false);
 // scrapWithDifferentUserAgent('https://httpbin.io/user-agent', true);
-scrapUsingUserAgentPlugins('https://httpbin.io/user-agent', true);
+// scrapUsingUserAgentPlugins('https://httpbin.io/user-agent', true);
+
 
 /*
 Puppeteer Stealth

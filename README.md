@@ -8,3 +8,6 @@ puppeteer-extra-plugin-repl: To make debugging fun with an interactive REPL (Rea
 puppeteer-extra-plugin-block-resources: To block dynamically page resources such as images, media, CSS, and JS files.
 puppeteer-extra-plugin-anonymize-ua: To anonymize the User-Agent header on page navigation. Learn about why this is important in our guide on User-Agent for web scraping.
 puppeteer-extra-plugin-user-preferences: To set custom Chrome/Chromium user preferences.
+
+> Read More
+> https://www.webshare.io/academy-article/puppeteer-extra#conclusion
