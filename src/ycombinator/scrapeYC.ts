@@ -50,8 +50,8 @@ async function coreLogic(page: Page, url: string) {
         }))
     );
     const date = new Date().toLocaleDateString().replaceAll('/', '-');
-    fs.writeFileSync(`${date}_post.md`, mdData);
-    fs.writeFileSync(`${date}_post.xlsx`, xls, 'binary');
+    fs.writeFileSync(`yc-daily-post/${date}_post.md`, mdData);
+    fs.writeFileSync(`yc-daily-post/${date}_post.xlsx`, xls, 'binary');
     return allCurrentJobs;
 }
 async function scrapeYC(url: string, headless: boolean) {
