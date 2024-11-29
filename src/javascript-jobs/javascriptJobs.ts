@@ -85,7 +85,7 @@ async function scrapeYC(url: string, headless: boolean) {
     console.log(bodyText1);
     // const returnScrapData = await coreLogic(page, url);
     const allCurrentJobs: Array<Jobs> = [];
-    for(let i=1;i<=10;i++){
+    for(let i=1;i<=5;i++){
         await coreLogic(page, `${url}${i==1? '':`?page=${i}`}`, allCurrentJobs);
     }
     saveLocally(allCurrentJobs);
