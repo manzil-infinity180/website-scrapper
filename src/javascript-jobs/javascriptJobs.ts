@@ -73,7 +73,7 @@ async function scrapeYC(url: string, headless: boolean) {
         width: Math.floor(Math.random() * (1920 - 1024)) + 1024,
         height: Math.floor(Math.random() * (1080 - 768)) + 768,
     });
-    const generatedUserAgents = generateUserAgents(100);
+    const generatedUserAgents = generateUserAgents(1000);
     const randomUserAgent =
         generatedUserAgents[Math.floor(Math.random() * generatedUserAgents.length)];
     console.log("Random User-Agent:", randomUserAgent);
