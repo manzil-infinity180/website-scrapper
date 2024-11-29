@@ -9,11 +9,15 @@
 - puppeteer-extra-plugin-anonymize-ua: To anonymize the User-Agent header on page navigation. Learn about why this is important in our guide on User-Agent for web scraping.
 - puppeteer-extra-plugin-user-preferences: To set custom Chrome/Chromium user preferences.
 
+## Demo - (Under Development)
 > Read More
 > https://www.webshare.io/academy-article/puppeteer-extra#conclusion
 
 > Scrape Any Twitter Post
 > [Click Here](https://github.com/manzil-infinity180/website-scrapper/tree/main/src/twitter)
 
-> See Latest YC job
-> [Click Here](https://github.com/manzil-infinity180/website-scrapper/tree/main/src/ycombinator)
+> See Latest YC job/internship
+> [Click Here](https://github.com/manzil-infinity180/website-scrapper/tree/main/yc-daily-post)
+
+> See Latest Javascript Remote job
+> [Click Here](https://github.com/manzil-infinity180/website-scrapper/tree/main/javascript-jobs-post)
