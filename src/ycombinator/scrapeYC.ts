@@ -36,6 +36,7 @@ async function coreLogic(page: Page, url: string) {
         }
         allCurrentJobs.push(ycJobsList);
     });
+    console.log(allCurrentJobs);
     const xls = json2xls(allCurrentJobs);
     const mdData = json2md(
         allCurrentJobs.map(job => ({
@@ -54,7 +55,7 @@ async function coreLogic(page: Page, url: string) {
     fs.writeFileSync(`yc-daily-post/${date}_post.xlsx`, xls, 'binary');
     return allCurrentJobs;
 }
-async function scrapeYC(url: string, headless: boolean) {
+export async function scrapeYC(url: string, headless: boolean) {
     const browser = await puppeteer.launch({
         headless: headless,
     });
