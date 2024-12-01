@@ -1,10 +1,6 @@
 name: Daily Job Scraper
 
 on:
-  push:
-    branches:
-      - main
-  
   schedule:
     - cron: '0 6 * * *' 
   workflow_dispatch:
@@ -25,9 +21,6 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
-
-      - name: Run Puppeteer Company Scraping
-        run: npx ts-node src/arc-companies/arcScrape.ts
 
       - name: Run Puppeteer YC Job script
         run: npx ts-node src/ycombinator/scrapeYC.ts
