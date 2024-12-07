@@ -1,0 +1,1 @@
+// here to scrape the all companies data
