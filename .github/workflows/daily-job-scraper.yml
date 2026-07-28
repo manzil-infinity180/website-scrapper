@@ -12,7 +12,6 @@ on:
 jobs:
   scrape-and-update:
     runs-on: ubuntu-22.04
-    permissions: write-all
 
     steps:
       - name: Checkout repository
